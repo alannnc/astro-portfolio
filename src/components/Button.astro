@@ -1,0 +1,22 @@
+---
+interface Props {
+  title?: string;
+  url?: string;
+  img?: string;
+  icon?: string;
+}
+import { Github, Linkedin } from "lucide-react";
+const { title, url, img, icon } = Astro.props;
+
+---
+<a
+  class="btn btn-primary hover:bg-blue-700 px-4 py-1 rounded text-white"
+  href={url }
+>
+  {!icon && title || img}
+  {icon === "Github" && <Github />}
+  {icon === "Linkedin" && <Linkedin />}
+</a>
+  
+
+
